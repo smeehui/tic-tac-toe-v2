@@ -11,7 +11,7 @@ function Board({ board }) {
     const { winLine } = useContext(GameContext);
     return (
         <Container>
-            <table className={clsx(styles.board)}>
+            <table className={clsx(styles.board, "m-auto")}>
                 <tbody>
                     {board.map((row, rIndex) => {
                         let cells = row.map((cell, cIndex) => {
@@ -27,7 +27,7 @@ function Board({ board }) {
                                                 xy[1] === cIndex,
                                         ).length > 0
                                     }
-                                   
+                                    isX={board[rIndex][cIndex]==="X"}
                                 >
                                     {cell}
                                 </Cell>

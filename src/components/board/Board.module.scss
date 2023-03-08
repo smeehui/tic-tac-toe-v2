@@ -1,15 +1,37 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap");
+:root {
+    --board-neon-color: #46b9a0af;
+}
 
 .board {
     width: 90%;
-    max-width: 500px;
-
+    max-width: 600px;
     border-collapse: separate !important;
+    background: #44a08d; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        to right,
+        #09363770,
+        #44a08d7c
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right,
+        #09363781,
+        #44a08d75
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    box-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff,
+        0 0 42px var(--board-neon-color), 0 0 82px var(--board-neon-color),
+        0 0 92px var(--board-neon-color), 0 0 102px var(--board-neon-color),
+        0 0 151px var(--board-neon-color);
+    border-radius: 5px;
 }
 .cell {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.5rem;
+    color: whitesmoke;
     width: auto;
     position: relative;
-    border: 1px solid #0f0f0f;
+    border: 1px solid #eee;
     margin: 2px;
     border-radius: 5px;
     -webkit-touch-callout: none; /* iOS Safari */
@@ -21,7 +43,6 @@
                                   supported by Chrome, Edge, Opera and Firefox */
 }
 .content {
-    font-family: "Open Sans", sans-serif;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -37,6 +58,17 @@
     display: block;
     margin-top: 100%;
 }
+.x-turn {
+    color: #fffb00;
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px orange,
+        0 0 82px orange, 0 0 92px orange, 0 0 102px orange, 0 0 151px orange;
+}
+
+.o-turn {
+    color: #44a08db0;
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px orange,
+        0 0 82px orange, 0 0 92px orange, 0 0 102px orange, 0 0 151px orange;
+}
 
 .cell:hover {
     animation: bounce 1s ease infinite;
@@ -48,7 +80,21 @@
 }
 
 .win {
-    background-color: red;
+    background: #4568dc; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        to right,
+        #b06ab3,
+        #4568dc
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right,
+        #b06ab3,
+        #4568dc
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    animation: sake 1s infinite 0s;
+    .content {
+        color: #3a5d22;
+    }
 }
 
 @keyframes bounce {
@@ -58,7 +104,7 @@
     20% {
         transform: translateY(0%);
     }
-    0% {
+    40% {
         transform: translateY(0%);
     }
     65% {
@@ -105,23 +151,25 @@
     }
 }
 
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
+@keyframes sake {
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
     }
-    20% {
-        transform: rotate(72deg);
-    }
-    40% {
-        transform: rotate(144deg);
-    }
-    60% {
-        transform: rotate(216deg);
-    }
+
+    20%,
     80% {
-        transform: rotate(288deg);
+        transform: translate3d(2px, 0, 0);
     }
-    100% {
-        transform: rotate(360deg);
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-3px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(3px, 0, 0);
     }
 }

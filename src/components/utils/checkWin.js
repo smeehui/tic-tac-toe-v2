@@ -78,7 +78,7 @@ export const checkWin = (board, coordinates) => {
                 count = 0;
             }
             if (count === 4) {
-                winLine.push([row, originMainCross + 1]);
+                winLine.push([row +1, originMainCross + 1]);
                 return { player: board[row][originMainCross], line: winLine };
             }
             row++;

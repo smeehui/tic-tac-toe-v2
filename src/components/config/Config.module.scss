@@ -1,0 +1,28 @@
+.wrapper {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    left: 80%;
+    top: 12%;
+    // float: right;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s ease;
+}
+
+.show-btn {
+    min-width: 38px;
+    // max-width: 38px;
+}
+
+.config {
+    display: flex;
+    flex-direction: column;
+    // justify-content: start;
+    width: 200px !important;
+    background-color: rgba(232, 247, 247, 0.233);
+    border-radius: 10px;
+    text-align: start;
+    padding: 10px;
+}
