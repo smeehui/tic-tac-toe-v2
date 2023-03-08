@@ -1,4 +1,4 @@
-#A small project making a caro game with custom size
+#A small project making a caro game with customizable size
 
 ##Framework applied:
 - React
