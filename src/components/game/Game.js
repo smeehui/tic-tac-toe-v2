@@ -53,7 +53,7 @@ function Game() {
         let { player, line } = checkWin(board, coordinates);
         setWinner(player);
         setWinLine(line);
-    }, [isXNext,board,coordinates]);
+    }, [isXNext,coordinates]);
 
     function handleClick(x, y) {
         let boardCopy = JSON.parse(JSON.stringify(board));
