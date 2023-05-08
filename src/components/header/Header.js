@@ -12,7 +12,7 @@ function Header() {
                     <Image src={image} width="80px" />
                 </Col>
                 <Col lg="3">
-                  <h3 className={clsx(styles.title)}>TIC-TAC-TOE</h3>
+                  <h3 className={clsx(styles.title)}>Caro</h3>
                 </Col>
             </Row>
         </Container>
